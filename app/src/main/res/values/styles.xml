@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseTextStyle">
+        <item name="android:textColor">?headerTextColor</item>
+    </style>
+
+    <style name="BaseTextStyle.Header">
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="BaseTextStyle.Header.Max">
+        <item name="android:textSize">@dimen/text_size_header_max</item>
+        <item name="android:layout_margin">@dimen/margin_max</item>
+    </style>
+
+</resources>
