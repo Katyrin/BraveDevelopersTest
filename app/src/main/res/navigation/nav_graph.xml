@@ -9,17 +9,29 @@
         android:id="@+id/splashFragment"
         android:name="com.katyrin.bravedeveloperstest.view.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_menuFragment"
             app:destination="@id/menuFragment"
             app:popUpTo="@+id/splashFragment"
-            app:popUpToInclusive="false"/>
+            app:popUpToInclusive="false" />
     </fragment>
 
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.katyrin.bravedeveloperstest.view.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@+id/menuFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.katyrin.bravedeveloperstest.view.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>

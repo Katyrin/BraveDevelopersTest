@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.katyrin.bravedeveloperstest.R
 import com.katyrin.bravedeveloperstest.databinding.FragmentMenuBinding
@@ -14,6 +15,9 @@ class MenuFragment : Fragment() {
 
     private var binding: FragmentMenuBinding? = null
     private var navController: NavController? = null
+    private val navDirectionsSearch: NavDirections by lazy {
+        MenuFragmentDirections.actionMenuFragmentToSearchFragment()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +33,7 @@ class MenuFragment : Fragment() {
 
     private fun initViews() {
         binding?.apply {
-            searchPokemonButton.setOnClickListener { }
+            searchPokemonButton.setOnClickListener { navController?.navigate(navDirectionsSearch) }
             randomPokemonButton.setOnClickListener { }
             favoritesButton.setOnClickListener { }
         }

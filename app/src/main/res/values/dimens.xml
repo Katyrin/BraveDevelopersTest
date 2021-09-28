@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <dimen name="margin_normal">8dp</dimen>
     <dimen name="margin_max">32dp</dimen>
+    <dimen name="margin_top_progress_bar">128dp</dimen>
 
+    <dimen name="text_size_normal">24sp</dimen>
     <dimen name="text_size_header_max">32sp</dimen>
 
 </resources>
