@@ -18,4 +18,5 @@
     <string name="connection_error_message">Connection shutdown. Please check your internet</string>
     <string name="server_error_message">Server is unreachable, please try again later</string>
     <string name="enter_another_pokemon">Enter another pokemon</string>
+    <string name="random_search">Random search</string>
 </resources>

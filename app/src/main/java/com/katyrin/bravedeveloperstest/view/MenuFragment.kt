@@ -18,6 +18,9 @@ class MenuFragment : Fragment() {
     private val navDirectionsSearch: NavDirections by lazy {
         MenuFragmentDirections.actionMenuFragmentToSearchFragment()
     }
+    private val navDirectionsRandom: NavDirections by lazy {
+        MenuFragmentDirections.actionMenuFragmentToRandomFragment()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +37,7 @@ class MenuFragment : Fragment() {
     private fun initViews() {
         binding?.apply {
             searchPokemonButton.setOnClickListener { navController?.navigate(navDirectionsSearch) }
-            randomPokemonButton.setOnClickListener { }
+            randomPokemonButton.setOnClickListener { navController?.navigate(navDirectionsRandom) }
             favoritesButton.setOnClickListener { }
         }
     }

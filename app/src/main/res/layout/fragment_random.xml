@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SearchFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_max"
+            android:contentDescription="@string/search_button"
+            android:src="@drawable/ic_search"
+            android:text="@string/random_search"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_progress_bar"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search_button" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/info_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_max"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/search_button">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/pokemon_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:gravity="center"
+                android:textSize="@dimen/text_size_header_max"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/favorite_chip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Pokemon Name" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/favorite_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_normal"
+                android:checkable="true"
+                android:gravity="center"
+                android:text="@string/favorite"
+                app:layout_constraintBottom_toBottomOf="@id/pokemon_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/pokemon_name"
+                app:layout_constraintTop_toTopOf="@id/pokemon_name" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/pokemon_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/margin_normal"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_name" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/height_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:text="@string/height"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toStartOf="@id/height_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/height_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/height_text"
+                app:layout_constraintTop_toBottomOf="@id/pokemon_image"
+                tools:text="10" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/weight_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:text="@string/weight"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toStartOf="@id/weight_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/height_text" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/weight_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/weight_text"
+                app:layout_constraintTop_toBottomOf="@id/height_text"
+                tools:text="5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/type_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:text="@string/type"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toStartOf="@id/type_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/weight_text" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/type_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/type_text"
+                app:layout_constraintTop_toBottomOf="@id/weight_text"
+                tools:text="Bird" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/attack_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:text="@string/attack"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toStartOf="@id/attack_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/type_text" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/attack_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/attack_text"
+                app:layout_constraintTop_toBottomOf="@id/type_text"
+                tools:text="30" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/defense_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:text="@string/defense"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toStartOf="@id/defense_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/attack_text" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/defense_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/defense_text"
+                app:layout_constraintTop_toBottomOf="@id/attack_text"
+                tools:text="50" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hp_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:text="@string/hp"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toStartOf="@id/hp_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/defense_text" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hp_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/hp_text"
+                app:layout_constraintTop_toBottomOf="@id/defense_text"
+                tools:text="100" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

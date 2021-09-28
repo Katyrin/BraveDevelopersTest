@@ -27,6 +27,11 @@
             app:destination="@id/searchFragment"
             app:popUpTo="@+id/menuFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_menuFragment_to_randomFragment"
+            app:destination="@id/randomFragment"
+            app:popUpTo="@+id/menuFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
 
     <fragment
@@ -34,4 +39,8 @@
         android:name="com.katyrin.bravedeveloperstest.view.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/randomFragment"
+        android:name="com.katyrin.bravedeveloperstest.view.RandomFragment"
+        android:label="RandomFragment" />
 </navigation>
