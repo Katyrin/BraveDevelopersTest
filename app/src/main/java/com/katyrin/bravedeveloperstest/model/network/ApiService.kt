@@ -7,7 +7,7 @@ import retrofit2.http.Path
 
 interface ApiService {
 
-    @GET("pokemon")
+    @GET("pokemon?limit=20000")
     suspend fun getListPokemon(): NamedApiResourceList
 
     @GET("pokemon/{name}")

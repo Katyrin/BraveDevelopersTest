@@ -6,8 +6,11 @@ import com.katyrin.bravedeveloperstest.model.datasource.RemoteDataSource
 import com.katyrin.bravedeveloperstest.model.datasource.RemoteDataSourceImpl
 import com.katyrin.bravedeveloperstest.model.mapping.PokemonMapping
 import com.katyrin.bravedeveloperstest.model.mapping.PokemonMappingImpl
+import com.katyrin.bravedeveloperstest.model.repository.RandomRepository
+import com.katyrin.bravedeveloperstest.model.repository.RandomRepositoryImpl
 import com.katyrin.bravedeveloperstest.model.repository.SearchRepository
 import com.katyrin.bravedeveloperstest.model.repository.SearchRepositoryImpl
+import com.katyrin.bravedeveloperstest.viewmodel.RandomViewModel
 import com.katyrin.bravedeveloperstest.viewmodel.SearchViewModel
 import org.koin.dsl.module
 
@@ -23,4 +26,11 @@ val searchModule = module {
         SearchRepositoryImpl(remoteDataSource = get(), localDataSource = get())
     }
     factory { SearchViewModel(searchRepository = get()) }
+}
+
+val randomModule = module {
+    single<RandomRepository> {
+        RandomRepositoryImpl(remoteDataSource = get(), localDataSource = get())
+    }
+    factory { RandomViewModel(randomRepository = get()) }
 }
