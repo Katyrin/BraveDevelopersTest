@@ -11,7 +11,9 @@ class App : Application() {
         super.onCreate()
         startKoin {
             androidContext(applicationContext)
-            modules(listOf(application, searchModule, network, database, randomModule))
+            modules(
+                listOf(application, searchModule, network, database, randomModule, favoritesModule)
+            )
         }
     }
 }

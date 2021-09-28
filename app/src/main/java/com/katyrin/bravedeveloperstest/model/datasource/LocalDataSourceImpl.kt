@@ -20,4 +20,7 @@ class LocalDataSourceImpl(
 
     override suspend fun deletePokemon(pokemonDTO: PokemonDTO): Unit =
         pokemonDAO.deletePokemon(pokemonDTO.name)
+
+    override suspend fun getPokemonList(): List<PokemonDTO> =
+        pokemonMapping.mapEntityListToDTOList(pokemonDAO.getPokemonList())
 }

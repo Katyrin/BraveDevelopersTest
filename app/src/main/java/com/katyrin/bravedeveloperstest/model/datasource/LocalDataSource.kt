@@ -6,4 +6,5 @@ interface LocalDataSource {
     suspend fun getPokemonByName(pokemonName: String): PokemonDTO?
     suspend fun savePokemon(pokemonDTO: PokemonDTO)
     suspend fun deletePokemon(pokemonDTO: PokemonDTO)
+    suspend fun getPokemonList(): List<PokemonDTO>
 }

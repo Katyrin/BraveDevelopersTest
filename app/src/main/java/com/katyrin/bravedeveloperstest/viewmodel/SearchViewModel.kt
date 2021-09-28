@@ -6,7 +6,7 @@ import kotlinx.coroutines.launch
 
 class SearchViewModel(
     private val searchRepository: SearchRepository
-) : BaseViewModel() {
+) : BaseViewModel<PokemonDTO>() {
 
     private var currentPokemon: PokemonDTO? = null
 
