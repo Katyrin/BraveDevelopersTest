@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MenuFragment">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/search_pokemon_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_max"
+        android:text="@string/search_pokemon"
+        app:layout_constraintBottom_toTopOf="@id/random_pokemon_button"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/random_pokemon_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_max"
+        android:text="@string/show_random_pokemon"
+        app:layout_constraintBottom_toTopOf="@id/favorites_button"
+        app:layout_constraintTop_toBottomOf="@id/search_pokemon_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/favorites_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_max"
+        android:text="@string/favorites"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/random_pokemon_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

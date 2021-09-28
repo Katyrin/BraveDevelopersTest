@@ -8,38 +8,36 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.katyrin.bravedeveloperstest.R
-import com.katyrin.bravedeveloperstest.databinding.FragmentSplashBinding
-import com.katyrin.bravedeveloperstest.utils.setRotateImage
+import com.katyrin.bravedeveloperstest.databinding.FragmentMenuBinding
 
-class SplashFragment : Fragment() {
+class MenuFragment : Fragment() {
 
-    private var binding: FragmentSplashBinding? = null
+    private var binding: FragmentMenuBinding? = null
     private var navController: NavController? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View = FragmentSplashBinding.inflate(inflater, container, false)
+    ): View = FragmentMenuBinding.inflate(inflater, container, false)
         .also { binding = it }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(requireActivity(), R.id.main_container)
-        startAnimation()
+        initViews()
     }
 
-    private fun startAnimation() {
-        binding?.imageView?.setRotateImage { replaceMapFragment() }
+    private fun initViews() {
+        binding?.apply {
+            searchPokemonButton.setOnClickListener { }
+            randomPokemonButton.setOnClickListener { }
+            favoritesButton.setOnClickListener { }
+        }
     }
 
-    private fun replaceMapFragment() {
-        val navDirections = SplashFragmentDirections.actionSplashFragmentToMenuFragment()
-        navController?.navigate(navDirections)
-    }
-
-    override fun onDetach() {
+    override fun onDestroyView() {
         binding = null
         navController = null
-        super.onDetach()
+        super.onDestroyView()
     }
 }
