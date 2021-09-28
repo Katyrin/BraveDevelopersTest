@@ -1,7 +1,8 @@
-package com.katyrin.bravedeveloperstest
+package com.katyrin.bravedeveloperstest.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.katyrin.bravedeveloperstest.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
