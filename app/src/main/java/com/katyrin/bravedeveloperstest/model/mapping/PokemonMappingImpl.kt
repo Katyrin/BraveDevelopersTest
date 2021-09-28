@@ -31,6 +31,11 @@ class PokemonMappingImpl : PokemonMapping {
         PokemonEntity(name, height, weight, types, attack, defense, hp, imageUrl, id)
     }
 
+    override fun mapEntityListToDTOList(pokemonEntityList: List<PokemonEntity>): List<PokemonDTO> =
+        mutableListOf<PokemonDTO>().also { listDTO ->
+            pokemonEntityList.forEach { listEntity -> listDTO.add(mapEntityToDTO(listEntity)) }
+        }
+
     private companion object {
         const val HP = 0
         const val ATTACK = 1

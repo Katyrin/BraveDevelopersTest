@@ -53,9 +53,9 @@ class SearchFragment : Fragment() {
         hideKeyboard()
     }
 
-    private fun renderData(appState: AppState) {
+    private fun renderData(appState: AppState<PokemonDTO>) {
         when (appState) {
-            is AppState.Success -> showPokemon(appState.pokemonDTO)
+            is AppState.Success -> showPokemon(appState.value)
             is AppState.Error -> setErrorState(appState.errorState)
             is AppState.Loading -> showLoadingState()
         }

@@ -10,10 +10,10 @@ import java.io.IOException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
-abstract class BaseViewModel : ViewModel() {
+abstract class BaseViewModel<T> : ViewModel() {
 
-    protected val mutableLiveData: MutableLiveData<AppState> = MutableLiveData()
-    val liveData: LiveData<AppState>
+    protected val mutableLiveData: MutableLiveData<AppState<T>> = MutableLiveData()
+    val liveData: LiveData<AppState<T>>
         get() = mutableLiveData
 
     protected val viewModelCoroutineScope = CoroutineScope(

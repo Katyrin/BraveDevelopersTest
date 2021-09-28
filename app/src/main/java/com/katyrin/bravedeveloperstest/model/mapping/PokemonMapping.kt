@@ -8,4 +8,5 @@ interface PokemonMapping {
     fun mapPokemonToPokemonDTO(pokemon: Pokemon): PokemonDTO
     fun mapEntityToDTO(pokemonEntity: PokemonEntity): PokemonDTO
     fun mapDTOToEntity(pokemonDTO: PokemonDTO): PokemonEntity
+    fun mapEntityListToDTOList(pokemonEntityList: List<PokemonEntity>): List<PokemonDTO>
 }

@@ -6,7 +6,7 @@ import kotlinx.coroutines.launch
 
 class RandomViewModel(
     private val randomRepository: RandomRepository
-) : BaseViewModel() {
+) : BaseViewModel<PokemonDTO>() {
 
     private var currentPokemon: PokemonDTO? = null
 

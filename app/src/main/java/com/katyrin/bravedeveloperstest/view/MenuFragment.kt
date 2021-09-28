@@ -15,11 +15,15 @@ class MenuFragment : Fragment() {
 
     private var binding: FragmentMenuBinding? = null
     private var navController: NavController? = null
+
     private val navDirectionsSearch: NavDirections by lazy {
         MenuFragmentDirections.actionMenuFragmentToSearchFragment()
     }
     private val navDirectionsRandom: NavDirections by lazy {
         MenuFragmentDirections.actionMenuFragmentToRandomFragment()
+    }
+    private val navDirectionsFavorites: NavDirections by lazy {
+        MenuFragmentDirections.actionMenuFragmentToFavoritesFragment()
     }
 
     override fun onCreateView(
@@ -38,7 +42,7 @@ class MenuFragment : Fragment() {
         binding?.apply {
             searchPokemonButton.setOnClickListener { navController?.navigate(navDirectionsSearch) }
             randomPokemonButton.setOnClickListener { navController?.navigate(navDirectionsRandom) }
-            favoritesButton.setOnClickListener { }
+            favoritesButton.setOnClickListener { navController?.navigate(navDirectionsFavorites) }
         }
     }
 
